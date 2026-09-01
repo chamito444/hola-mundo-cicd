@@ -5,7 +5,7 @@ function saludar(nombre) {
   if (!nombre || nombre.trim() === '') {
     throw new Error('El nombre no puede estar vacío');
   }
-  return `¡Hola, ${nombre}! Bienvenido al mundo de CI/CD con GitHub Actions 🚀`;
+  return `Hola ${nombre}`;
 }
 
 function despedir(nombre) {
