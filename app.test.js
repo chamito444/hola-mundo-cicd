@@ -44,7 +44,3 @@ test('despedir() lanza un error si el nombre está vacío', () => {
   expect(() => despedir('')).toThrow('El nombre no puede estar vacío');
 });
 
-test('TEST ROTO: este test falla a propósito', () => {
-  const resultado = saludar('Test');
-  expect(resultado).toBe('Este mensaje no existe y fallará');
-});
