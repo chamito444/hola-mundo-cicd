@@ -48,3 +48,6 @@ test('convertirMayusculas() convierte el texto correctamente', () => {
   expect(convertirMayusculas('hola mundo')).toBe('HOLA MUNDO');
 });
 
+test('contarCaracteres() retorna la cantidad correcta', () => {
+  expect(contarCaracteres('Hola')).toBe(4);
+});
