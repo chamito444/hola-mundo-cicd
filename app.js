@@ -23,7 +23,11 @@ function obtenerFecha() {
   });
 }
 
-module.exports = { saludar, despedir, obtenerFecha };
+function convertirMayusculas(texto) {
+  return texto.toUpperCase();
+}
+
+module.exports = { saludar, obtenerFecha, despedir, convertirMayusculas };
 
 if (require.main === module) {
   console.log(saludar('Mundo'));
