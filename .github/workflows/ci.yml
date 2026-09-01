@@ -3,7 +3,7 @@ name: CI Pipeline - Hola Mundo
 on:
   push:
     branches:
-      - main
+      - develop
   pull_request:
     branches:
       - main
