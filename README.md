@@ -66,4 +66,3 @@ El código cumpla las convenciones establecidas.
 
 Después de la aprobación, el Pull Request puede integrarse mediante merge. Una vez integrado el cambio, la rama temporal puede eliminarse para mantener el repositorio organizado.
 
-Control de versiones
