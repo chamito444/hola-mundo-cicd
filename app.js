@@ -23,7 +23,15 @@ function obtenerFecha() {
   });
 }
 
-module.exports = { saludar, despedir, obtenerFecha };
+function convertirMayusculas(texto) {
+  return texto.toUpperCase();
+}
+
+function contarCaracteres(texto) {
+  return texto.length;
+}
+
+module.exports = { saludar, obtenerFecha, despedir, convertirMayusculas, contarCaracteres };
 
 if (require.main === module) {
   console.log(saludar('Mundo'));

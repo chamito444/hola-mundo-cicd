@@ -1,7 +1,7 @@
 // app.test.js - Suite de pruebas unitarias
 // Se ejecutan automáticamente en el pipeline de CI
 
-const { saludar, despedir, obtenerFecha } = require('./app');
+const { saludar, obtenerFecha, despedir, convertirMayusculas, contarCaracteres } = require('./app')
 
 // --- Tests de la función saludar() ---
 
@@ -44,3 +44,10 @@ test('despedir() lanza un error si el nombre está vacío', () => {
   expect(() => despedir('')).toThrow('El nombre no puede estar vacío');
 });
 
+test('convertirMayusculas() convierte el texto correctamente', () => {
+  expect(convertirMayusculas('hola mundo')).toBe('HOLA MUNDO');
+});
+
+test('contarCaracteres() retorna la cantidad correcta', () => {
+  expect(contarCaracteres('Hola')).toBe(4);
+});
