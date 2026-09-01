@@ -27,7 +27,11 @@ function convertirMayusculas(texto) {
   return texto.toUpperCase();
 }
 
-module.exports = { saludar, obtenerFecha, despedir, convertirMayusculas };
+function contarCaracteres(texto) {
+  return texto.length;
+}
+
+module.exports = { saludar, obtenerFecha, despedir, convertirMayusculas, contarCaracteres };
 
 if (require.main === module) {
   console.log(saludar('Mundo'));
