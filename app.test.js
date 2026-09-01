@@ -1,7 +1,7 @@
 // app.test.js - Suite de pruebas unitarias
 // Se ejecutan automáticamente en el pipeline de CI
 
-const { saludar, obtenerFecha, despedir, convertirMayusculas } = require('./app')
+const { saludar, obtenerFecha, despedir, convertirMayusculas, contarCaracteres } = require('./app')
 
 // --- Tests de la función saludar() ---
 
