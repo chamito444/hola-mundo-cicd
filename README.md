@@ -1,68 +1,100 @@
 # hola-mundo-cicd
 Mi primera app con CI/CD y GitHub Actions
 
-Estrategia de ramificación: GitFlow
-Para este proyecto se utilizará GitFlow como estrategia de ramificación, debido a que permite organizar de forma clara el desarrollo de nuevas funcionalidades, correcciones y versiones del proyecto.
-GitFlow utiliza una estructura de ramas que separa el desarrollo de nuevas funcionalidades del código estable. Las principales ramas utilizadas son:
+Integrantes: Ignacio chamorro y Agustin
 
-main: contiene las versiones estables del proyecto.
-develop: rama principal de desarrollo, donde se integran las nuevas funcionalidades antes de llegar a main.
-feature/<nombre>: ramas utilizadas para desarrollar nuevas funcionalidades de forma aislada.
-hotfix/<nombre>: ramas utilizadas para solucionar errores importantes o urgentes detectados en una versión estable.
+# Hola Mundo CI/CD
 
-Se eligió GitFlow porque facilita la organización del trabajo colaborativo, permite mantener separadas las funcionalidades en desarrollo del código estable y proporciona una trazabilidad clara mediante Pull Requests y commits.
+## Descripción
 
-El flujo general utilizado es:
+Proyecto desarrollado en Node.js para aplicar control de versiones, trabajo colaborativo e integración continua mediante Git, GitHub y GitHub Actions.
 
-feature/<nombre> → develop → main
+## Estrategia de ramas
 
-Para correcciones urgentes se utiliza:
+Se utiliza **GitFlow**, separando el desarrollo de funcionalidades de la versión estable.
 
-hotfix/<nombre> → main
+```text
+main
+ ├── develop
+ │    ├── feature/agregar-mayusculas
+ │    └── feature/agregar-contador
+ │
+ └── hotfix/...
+```
 
-Los Pull Requests permiten revisar los cambios antes de integrarlos y GitHub Actions ejecuta automáticamente las pruebas para verificar que el código mantenga su funcionamiento.
+Flujo utilizado:
 
+```text
+feature/* → develop → main
+hotfix/*  → main
+```
 
-Naming de ramas
+Las funcionalidades y correcciones se integran mediante Pull Requests.
 
-Se utilizan nombres descriptivos según el tipo de cambio:
+## Convenciones
 
-feature/<nombre> para nuevas funcionalidades.
-hotfix/<nombre> para correcciones urgentes.
-develop para integrar cambios durante el desarrollo.
-main para mantener el código estable.
+### Ramas
 
-Los nombres deben ser claros, escritos en minúsculas y utilizando guiones para separar palabras. Por ejemplo:
+* `main`: versión estable.
+* `develop`: integración del desarrollo.
+* `feature/nombre`: nuevas funcionalidades.
+* `hotfix/nombre`: correcciones urgentes.
 
-feature/agregar-despedida
-feature/agregar-fecha
-hotfix/corregir-saludo
-Convención de commits
+### Commits
 
-Los commits utilizan prefijos que permiten identificar rápidamente el tipo de cambio:
+Se utilizan prefijos descriptivos:
 
-feat: para nuevas funcionalidades.
-fix: para correcciones de errores.
-test: para agregar o modificar pruebas.
-docs: para modificaciones de documentación.
-chore: para tareas de mantenimiento o configuración.
+* `feat:` nuevas funcionalidades.
+* `fix:` correcciones.
+* `test:` pruebas.
+* `docs:` documentación.
 
 Ejemplos:
 
-feat: agrega función despedir
-fix: corrige validación del nombre
-test: agrega pruebas para despedir
-docs: actualiza README
-Flujo de Pull Requests y Merge
+```text
+feat: agrega contador de caracteres
+feat: agrega función para convertir texto a mayúsculas
+test: actualiza imports de funcionalidades
+```
 
-Los cambios se desarrollan inicialmente en ramas feature o hotfix. Una vez terminados, se crea un Pull Request para revisar los cambios antes de integrarlos.
+## Pull Requests
 
-Antes de realizar el merge se debe verificar que:
+Las `feature` se integran a `develop` y posteriormente `develop` se integra a `main`.
 
-Los cambios hayan sido revisados.
-Los tests automáticos de GitHub Actions estén en verde.
-No existan errores conocidos.
-El código cumpla las convenciones establecidas.
+Los `hotfix` se integran directamente a `main`.
 
-Después de la aprobación, el Pull Request puede integrarse mediante merge. Una vez integrado el cambio, la rama temporal puede eliminarse para mantener el repositorio organizado.
+Antes del merge se verifica que los tests y GitHub Actions sean exitosos y que no existan conflictos.
+
+## GitHub Actions
+
+El pipeline de CI se ejecuta:
+
+* Con cada `push` a `develop`.
+* Con cada Pull Request hacia `main`.
+
+El pipeline instala las dependencias, ejecuta los tests con Jest y verifica la ejecución de la aplicación.
+
+## Estructura
+
+```text
+├── .github/workflows/
+│   └── ci.yml
+├── app.js
+├── app.test.js
+├── package.json
+└── README.md
+```
+
+## Funcionalidades
+
+* Convertir texto a mayúsculas.
+* Contar caracteres.
+* Funciones base de saludo, despedida y fecha.
+
+Todas cuentan con pruebas unitarias.
+
+## Control de versiones
+
+Se utilizan Git y GitHub para registrar y compartir los cambios mediante `clone`, `branch`, `checkout`, `add`, `commit`, `push`, `pull` y `merge`.
+
 
